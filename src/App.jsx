@@ -2,12 +2,22 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import SearchBar from './Components/SearchBar';
 import Statistics from './Components/Statistics';
-import Charts from './Components/Chart';
+// import Charts from './Components/Chart';
 
 
 const App = () => {
+
   //userdata=null
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState("");
+
+  const handleChange=(e)=>{
+  setUserData=e.target.value;
+  }
+  console.log(userData);
+
+  const handleSubmit=()=>{
+
+  }
 
   const fetchData = async (username) => {
 
@@ -27,13 +37,17 @@ const App = () => {
   return (
     <div>
       <h1>LeetCode Dashboard</h1>
-      <SearchBar onSubmit={fetchData} />
-      {userData && (
+      <form action="" onSubmit={handleSubmit}>
+      <input type="text" onChange={handleChange} />
+      </form>
+      {/* <SearchBar onSubmit={fetchData} /> */}
+      {/* {userData && (
         <>
           <Statistics data={userData} />
           <Charts data={userData} />
         </>
-      )}
+      )} */}
+     
     </div>
   );
 };
