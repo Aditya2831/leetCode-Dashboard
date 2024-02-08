@@ -1,54 +1,52 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import SearchBar from './Components/SearchBar';
-import Statistics from './Components/Statistics';
-// import Charts from './Components/Chart';
+ 
+    import { useNavigate } from 'react-router-dom';
 
+   
 
 const App = () => {
+  const [userData, setUserData] = useState(null);
+  const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
 
-  //userdata=null
-  const [userData, setUserData] = useState("");
-
-  const handleChange=(e)=>{
-  setUserData=e.target.value;
-  }
-  console.log(userData);
-
-  const handleSubmit=()=>{
-
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
   }
 
-  const fetchData = async (username) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     try {
-      const response = await axios.get(`https://leetcode-stats-api.herokuapp.com/${username}`);
-      console.log(response);
-      //console.log(userData);
+      const response = await axios.get(`https://leetcode-stats-api.herokuapp.com/${inputValue}`);
       setUserData(response.data);
-      //console.log(userData);
-    } 
-    
-    catch (error) {
+      navigate('/home');
+      //console.log(userData); 
+      console.log(response.data); 
+
+    } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
 
   return (
-    <div>
-      <h1>LeetCode Dashboard</h1>
-      <form action="" onSubmit={handleSubmit}>
-      <input type="text" onChange={handleChange} />
-      </form>
-      {/* <SearchBar onSubmit={fetchData} /> */}
-      {/* {userData && (
-        <>
-          <Statistics data={userData} />
-          <Charts data={userData} />
-        </>
-      )} */}
      
-    </div>
+    <div className="flex flex-col items-center justify-center h-screen">
+    <h1 className="text-4xl font-bold mb-6">LeetCode Dashboard</h1>
+    <form className="flex flex-col items-center" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleChange}
+        className="mb-4 p-2 text-lg border border-gray-400 rounded"
+      />
+      <button className="w-[300px] border-black h-[30px] " type="submit">
+        Submit
+      </button>
+
+       
+    </form>
+  </div>
   );
 };
 
