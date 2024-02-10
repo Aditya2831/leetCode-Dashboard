@@ -1,14 +1,49 @@
-import React from 'react';
+import React from 'react'
 
-const Statistics = ({ data }) => {
+const Statistics = () => {
   return (
-    <div>
-      <p>Total Questions Solved: {data.totalSolved}</p>
-      <p>Global Rank: {data.ranking}</p>
-      <p>Acceptance Rate: {data.acceptanceRate}</p>
-      <p>Contribution Points: {data.contributionPoints}</p>
-    </div>
-  );
-};
+    <div className='big'>
+    <div className='left'>   
+       <div className='global'>
+       GLOBAL RANK
+       </div>
+        <div className='con'>
+        CONTRIBUTION POINTS
+        </div>
+         <div className='acc'>
+         ACCEPTANCE 
 
-export default Statistics;
+RATE
+         </div>
+      
+      
+      
+      </div>
+
+
+
+
+
+    <div className='right flec-row ' >
+        <div className='up flex'>
+          <div className='last'>
+            LAST ACTIVE  <br /> 
+            REPUTION
+          </div>
+          <div className='pie'>
+
+          </div>
+
+        </div>
+
+        <div className='down'>
+        barchart
+        </div>
+      
+        </div>
+    </div>
+  )
+}
+
+export default Statistics
+

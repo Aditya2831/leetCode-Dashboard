@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
  
     import { useNavigate } from 'react-router-dom';
+    import { Kart } from './UserContext';
 
    
 
 const App = () => {
-  const [userData, setUserData] = useState(null);
+ // const [userData, setUserData] = useState(null);
+  const { setUserContextData } = React.useContext(Kart);
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
 
@@ -51,3 +53,4 @@ const App = () => {
 };
 
 export default App;
+

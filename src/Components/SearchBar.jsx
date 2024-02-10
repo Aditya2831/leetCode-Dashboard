@@ -1,24 +1,13 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ onSubmit }) => {
-  const [username, setUsername] = useState("");
-
-
-  const handleChange = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(username);
-    console.log(username);
-  };
-
+const SearchBar = () => {
+ 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={username} onChange={handleChange} />
-        <button type="submit">Search</button>
+      <form >
+
+        <input className='border border-gray-400 p-2' type="text"  />
+        
       </form>
     </div>
   );
