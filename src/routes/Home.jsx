@@ -11,7 +11,7 @@ import Statistics from '../Components/Statistics';
 
      <div className=''>
 
-      <SearchBar/>
+      {/* <SearchBar/> */}
       </div>
       {/* <Welcome/>  
       <div>
@@ -19,7 +19,7 @@ import Statistics from '../Components/Statistics';
   </div> */}
        
        <Charts/> 
-    am
+    
     </div>
   )
 }

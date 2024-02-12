@@ -2,37 +2,26 @@
   import UserContext from '../context/UserContext'
   import axios from "axios";
   import { Doughnut } from "react-chartjs-2";
+  import {Chart, ArcElement} from 'chart.js'
+      Chart.register(ArcElement);
   
 
   const Charts = () => {
 
-    const {data, setdata} = useContext(UserContext);
-   
+    const { user } = useContext(UserContext);
+    console.log(user);
 
-  /*  useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await axios.get(
-            "https://leetcode-stats-api.herokuapp.com/adityaa_gupta"
-          );
-          setData(response.data);
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      };
-
-      fetchData();
-    }, []); // Empty dependency array ensures this effect runs only once, similar to componentDidMount
-
-    if (!data) {
+    
+    if (!user) {
       return <div>Loading...</div>;
     }
-*//*
+
+
     const easyData = {
       labels: ["Solved", "Remaining"],
       datasets: [
         {
-          data: [data.easySolved, data.totalEasy - data.easySolved],
+          data: [user.easySolved, user.totalEasy - user.easySolved],
           backgroundColor: ["green", "black"],
         },
       ],
@@ -42,7 +31,7 @@
       labels: ["Solved", "Remaining"],
       datasets: [
         {
-          data: [data.mediumSolved, data.totalMedium - data.mediumSolved],
+          data: [user.mediumSolved, user.totalMedium - user.mediumSolved],
           backgroundColor: ["orange", "black"],
         },
       ],
@@ -52,15 +41,15 @@
       labels: ["Solved", "Remaining"],
       datasets: [
         {
-          data: [data.hardSolved, data.totalHard - data.hardSolved],
+          data: [user.hardSolved, user.totalHard - user.hardSolved],
           backgroundColor: ["red", "black"],
         },
       ],
     };
-*/
+
     return (
       <div>
-{/*
+
                 <h2>Easy Questions</h2>
                 <div>
                   <Doughnut data={easyData} />
@@ -75,8 +64,8 @@
                 <div>
                   <Doughnut data={hardData} />
                 </div> 
-    */}
-         {data}
+   
+        
       
       </div>
     );
