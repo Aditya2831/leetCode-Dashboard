@@ -8,17 +8,18 @@ import Statistics from '../Components/Statistics';
  const Home= () => {
   return (
     <div className='flex-col justify-center   text-center mx-44  border border-blue-400'>
-   {/*   <div className=''>
+
+     <div className=''>
 
       <SearchBar/>
       </div>
-      <Welcome/>  
+      {/* <Welcome/>  
       <div>
        < Statistics/>
-  </div>*/}
-  
+  </div> */}
+       
        <Charts/> 
-   
+    am
     </div>
   )
 }

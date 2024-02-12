@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { Route, Routes } from "react-router-dom"
 import Home from './routes/Home';
-import Context from './UserContext.jsx';
+//import Context from './UserContext.jsx';
 
 /*
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,44 +14,22 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 */
  
-
+import UserContextProvider from './context/UserContextProvider'
 import { BrowserRouter } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <UserContextProvider>
   <BrowserRouter>
-   <Context> 
+
  <Routes>
       <Route path="/" element={<App />} />
       <Route path="/home" element={<Home />} />
     </Routes>   
-    </Context>                                                  
+                                                     
 </BrowserRouter>
+</UserContextProvider>
 );  
 
 
-/*
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
-import './index.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './routes/Home';
-import { UserProvider } from './UserContext.jsx'; // Import UserProvider
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider> 
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/home" element={<Home />} />
-        </Routes>
-      </UserProvider>
-    </BrowserRouter>
-  </React.StrictMode>
-);
-*/

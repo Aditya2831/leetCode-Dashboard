@@ -1,11 +1,13 @@
   import React, { useState, useEffect,useContext } from "react";
+  import UserContext from '../context/UserContext'
   import axios from "axios";
   import { Doughnut } from "react-chartjs-2";
-  import {Kart} from  "../UserContext"
+  
 
   const Charts = () => {
-    const {data}= useContext(Kart);
-    console.log(data);
+
+    const {data, setdata} = useContext(UserContext);
+   
 
   /*  useEffect(() => {
       const fetchData = async () => {
