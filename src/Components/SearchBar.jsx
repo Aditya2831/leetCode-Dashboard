@@ -1,41 +1,9 @@
+import React from 'react';
 
-import React, { useContext } from 'react';
-import UserContext from '../context/UserContext';
-
-const SearchBar = () => {
-  const { user } = useContext(UserContext);
-  console.log(user);
-
-  // Assuming user is an object with the provided data structure
-  const {
-    status,
-    message,
-    totalSolved,
-    totalQuestions,
-    easySolved,
-    totalEasy,
-    mediumSolved,
-    totalMedium,
-    hardSolved,
-    totalHard,
-    acceptanceRate,
-    ranking,
-    contributionPoints,
-    reputation,
-    submissionCalendar,
-  } = user;
-
+export const SearchBar = () => {
   return (
-    <div>
-      <form>
-      
-        <div>
-          <p>Status: {status}</p>
-          <p>Message: {message}</p>
-          <p>Total Solved: {totalSolved}</p>
-           
-        </div>
-      </form>
+    <div className="flex justify-center mt-5">
+        <input type="text" className="mb-3 p-3 text-small border border-gray-900 rounded-xl w-[280px]"/>
     </div>
   );
 };

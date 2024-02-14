@@ -7,16 +7,17 @@ import Statistics from '../Components/Statistics';
 
  const Home= () => {
   return (
-    <div className='flex-col justify-center   text-center mx-44  border border-blue-400'>
+    <div className='flex-col justify-center   text-center  border border-blue-400 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white'>
 
      <div className=''>
 
-      {/* <SearchBar/> */}
+      <SearchBar/>
+
       </div>
-      {/* <Welcome/>  
+      <Welcome/>  
       <div>
-       < Statistics/>
-  </div> */}
+       <Statistics/>
+  </div>
        
        <Charts/> 
     
