@@ -55,35 +55,35 @@ const Charts = () => {
     ],
   };
 
-  const TotalData = {
-    labels: ["Solved", "Remaining"],
-    datasets: [
-      {
-        data: [user.mediumSolved+user.easySolved+user.hardSolved  ,user.mediumSolved+user.easySolved+user.hardSolved-(user.totalEasy+user.totalMedium+user.totalHard)],
-        backgroundColor: ["#b3ccff", "black"],
-      },
-    ],
-  };
+  // const TotalData = {
+  //   labels: ["Solved", "Remaining"],
+  //   datasets: [
+  //     {
+  //       data: [user.mediumSolved+user.easySolved+user.hardSolved  ,user.mediumSolved+user.easySolved+user.hardSolved-(user.totalEasy+user.totalMedium+user.totalHard)],
+  //       backgroundColor: ["#b3ccff", "black"],
+  //     },
+  //   ],
+  // };
 
   return (
-    <div className="flex flex-row justify-evenly mb-10 mt-3">
+    <div className="flex flex-row justify-evenly mb-14 mt-3">
       <div className="flex items-center">
-        <div className="bg-white bg-opacity-20 p-3 rounded-lg  ml-3 font-chakraPetch " style={{ width: '250px' }}>
-          <h1 className="mb-2">EASY SOLVED: {user.easySolved}/{user.totalEasy}</h1>
+        <div className="bg-white bg-opacity-20 p-3 rounded-lg  ml-3 font-chakraPetch " style={{ width: '250px', }}>
+          <h1 className="mb-2 font-semibold">EASY SOLVED: {user.easySolved}/{user.totalEasy}</h1>
           <Doughnut data={easyData} options={chartOptions2} />
         </div>
       </div>
 
       <div className="flex items-center">
         <div className="bg-white bg-opacity-20 p-4 rounded-lg ml-3 font-chakraPetch" style={{ width: '250px' }}>
-          <h1 className="mb-2">MEDIUM SOLVED: {user.mediumSolved}/{user.totalMedium}</h1>
+          <h1 className="mb-2 font-semibold">MEDIUM SOLVED: {user.mediumSolved}/{user.totalMedium}</h1>
           <Doughnut data={mediumData} options={chartOptions2} />
         </div>
       </div>
 
       <div className="flex items-center">
         <div className="bg-white bg-opacity-20 p-4 rounded-lg  mr-3 font-chakraPetch" style={{ width: '250px' }}>
-          <h1 className="mb-2">HARD SOLVED: {user.hardSolved}/{user.totalHard}</h1>
+          <h1 className="mb-2 font-semibold ">HARD SOLVED: {user.hardSolved}/{user.totalHard}</h1>
           <Doughnut data={hardData} options={chartOptions2} />
         </div>
       </div>
