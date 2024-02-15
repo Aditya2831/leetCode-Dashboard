@@ -111,7 +111,7 @@ const App = () => {
 </button>
       </form>
       <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg bg-gradient-to-r from-slate-900 to-slate-900 border-t border-gray-200 shadow md:flex md:items-center md:justify-center md:p-3 dark:bg-gray-800 dark:border-gray-600">
-    <span class="text-sm text-gray-200 dark:text-gray-100">© 2024 LEETRACK. All Rights Reserved.</span>
+    <span class="text-sm text-gray-200 dark:text-gray-100 font-chakraPetch  ">© 2024 LEETRACK. All Rights Reserved.</span>
 </footer>
 
 
