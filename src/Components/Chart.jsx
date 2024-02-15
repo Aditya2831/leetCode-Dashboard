@@ -14,7 +14,7 @@ const Charts = () => {
     cutout: '50%',
     elements: {
       arc: {
-        borderRadius: 4,
+        borderRadius: 2,
       },
     },
   };

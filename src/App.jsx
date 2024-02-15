@@ -99,15 +99,15 @@ const App = () => {
   type="text"
   value={inputValue}
   onChange={handleChange}
-  className="mb-3 p-3 text-small border border-gray-900 rounded-xl mt-7 w-[280px]"
-  placeholder='Please Enter Your Leetcode ID'
+  className="mb-3 p-3 text-small border border-gray-900 rounded-xl mt-7 w-[280px] font-chakraPetch"
+  placeholder='Enter Your Leetcode ID'
 />
 
         <button
   type="submit"
-  className="text-white bg-gradient-to-r from-slate-900 to-indigo-900 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] shadow-blue-800/90 dark:shadow-lg dark:shadow-blue-800/40 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-[180px]  border-black h-[50px] mt-3"
+  className="text-white font-chakraPetch bg-gradient-to-r from-slate-900 to-indigo-900 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] shadow-blue-800/90 dark:shadow-lg dark:shadow-blue-800/40 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-[180px]  border-black h-[50px] mt-3"
 >
-  Submit
+  SUBMIT
 </button>
       </form>
       <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg bg-gradient-to-r from-slate-900 to-slate-900 border-t border-gray-200 shadow md:flex md:items-center md:justify-center md:p-3 dark:bg-gray-800 dark:border-gray-600">
