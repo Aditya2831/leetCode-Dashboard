@@ -73,8 +73,9 @@ const Statistics = () => {
   const lastDate = new Date(parseInt(lastTimestamp) * 1000);
 
   return (
-    <div className="big flex justify-between mb-10">
-      <div className="p-4 flex-col">
+    <div className="big flex justify-evenly  mb-10 ">
+      <div className=" left p-4 flex-col">
+    
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           GLOBAL RANK: {user.ranking}
         </div>
@@ -87,8 +88,15 @@ const Statistics = () => {
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           REPUTATION: {user.reputation}
         </div>
+
+    </div>
+
+ <div className="right">  
+  <div className="rightup flex justify-evenly gap-[200px]">
+   <div  className=" ">
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           LAST ACTIVE: {lastDate.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+         
         </div>
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           MAXIMUM STREAK: {maxStreak} days
@@ -96,16 +104,22 @@ const Statistics = () => {
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           TOTAL ACTIVE DAYS: {totalActiveDays}
         </div>
-      </div>
-
-      <MonthlyProblemsChart/>
-
-      <div className="flex-col">
-        <div className="bg-white bg-opacity-20 p-4 rounded-lg ml-3 font-chakraPetch mr-7" style={{ width: '300px' }}>
+     </div>
+      
+      <div className="bg-white bg-opacity-20 p-4 rounded-lg ml-3 font-chakraPetch mr-7" style={{ width: '300px' }}>
           <h1 className="mb-2 font-semibold">TOTAL SOLVED: {user.mediumSolved+user.easySolved+user.hardSolved}/{user.totalEasy+user.totalMedium+user.totalHard}</h1>
           <Doughnut data={TotalData} options={chartOptions2} />
         </div>
+
+     
       </div>
+    
+      <div className="rightdown flex-col ">
+      <MonthlyProblemsChart className=' w-[400px]'/>
+      </div>
+      </div>
+
+
     </div>
   );
 };
