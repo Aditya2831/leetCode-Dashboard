@@ -67,7 +67,7 @@ const Charts = () => {
   // };
 
   return (
-    <div className="flex flex-row justify-evenly mb-14 mt-3">
+    <div className="flex flex-row gap-28 ml-14 mt-8 mb-14">
       <div className="flex items-center">
         <div className="bg-white bg-opacity-20 p-3 rounded-lg  ml-3 font-chakraPetch " style={{ width: '250px', }}>
           <h1 className="mb-2 font-semibold">EASY SOLVED: {user.easySolved}/{user.totalEasy}</h1>

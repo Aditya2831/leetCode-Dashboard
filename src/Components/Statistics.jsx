@@ -4,6 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from 'chart.js'
 Chart.register(ArcElement);
 import MonthlyProblemsChart from "./BarGraph";
+import Charts from "./Chart";
 
 const Statistics = () => {
   const chartOptions2 = {
@@ -73,9 +74,11 @@ const Statistics = () => {
   const lastDate = new Date(parseInt(lastTimestamp) * 1000);
 
   return (
-    <div className="big flex justify-evenly  mb-10 ">
-      <div className=" left p-4 flex-col">
-    
+    <div className="big flex flex-col justify-evenly  mb-10 ">
+      <div className="flex ml-3">  
+
+      <div className="flex flex-col gap-1">
+
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           GLOBAL RANK: {user.ranking}
         </div>
@@ -89,14 +92,31 @@ const Statistics = () => {
           REPUTATION: {user.reputation}
         </div>
 
+        </div>
+
+      <div className="flex justify-evenly gap-20">
+        <div className="rightdown flex-col mt-10 ml-16 ">
+      <MonthlyProblemsChart className=' w-[400px]'/>
+      </div>
+
+      <div className="bg-white bg-opacity-20 p-5 rounded-lg ml-3 font-chakraPetch mr-7" style={{ width: '300px',height: '350px' }}>
+          <h1 className="mb-2 font-semibold">TOTAL SOLVED: {user.mediumSolved+user.easySolved+user.hardSolved}/{user.totalEasy+user.totalMedium+user.totalHard}</h1>
+          <Doughnut data={TotalData} options={chartOptions2} />
+        </div>
+
+      </div>
+    
+
     </div>
 
- <div className="right">  
-  <div className="rightup flex justify-evenly gap-[200px]">
-   <div  className=" ">
+    
+
+ <div className="left">  
+  <div className="rightup flex ml-4 mt-0 mb-10">
+   <div  className=" flex flex-col gap-1 ">
+
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           LAST ACTIVE: {lastDate.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
-         
         </div>
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           MAXIMUM STREAK: {maxStreak} days
@@ -104,19 +124,18 @@ const Statistics = () => {
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           TOTAL ACTIVE DAYS: {totalActiveDays}
         </div>
+        <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
+          TOTAL ACTIVE DAYS: {totalActiveDays}
+        </div>
+     </div>
+
+      <div>
+     <Charts />
      </div>
       
-      <div className="bg-white bg-opacity-20 p-4 rounded-lg ml-3 font-chakraPetch mr-7" style={{ width: '300px' }}>
-          <h1 className="mb-2 font-semibold">TOTAL SOLVED: {user.mediumSolved+user.easySolved+user.hardSolved}/{user.totalEasy+user.totalMedium+user.totalHard}</h1>
-          <Doughnut data={TotalData} options={chartOptions2} />
-        </div>
-
-     
       </div>
     
-      <div className="rightdown flex-col ">
-      <MonthlyProblemsChart className=' w-[400px]'/>
-      </div>
+      
       </div>
 
 
