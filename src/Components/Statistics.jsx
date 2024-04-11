@@ -52,6 +52,7 @@ const Statistics = () => {
     return maxStreak;
   };
 
+
   // Function to calculate total active days
   const calculateTotalActiveDays = (submissionCalendar) => {
     return Object.keys(submissionCalendar).length;
@@ -59,6 +60,7 @@ const Statistics = () => {
 
   const maxStreak = calculateMaxStreak(user.submissionCalendar);
   const totalActiveDays = calculateTotalActiveDays(user.submissionCalendar);
+  const upperMessage=user.message.toUpperCase();
 
   const TotalData = {
     labels: ["Solved", "Remaining"],
@@ -71,7 +73,11 @@ const Statistics = () => {
   };
 
   const lastTimestamp = Object.keys(user.submissionCalendar).pop();
+  const firstTimestamp = Object.keys(user.submissionCalendar).shift();
+
   const lastDate = new Date(parseInt(lastTimestamp) * 1000);
+  const firstDate = new Date(parseInt(firstTimestamp) * 1000);
+
 
   return (
     <div className="big flex flex-col justify-evenly  mb-10 ">
@@ -79,15 +85,17 @@ const Statistics = () => {
 
       <div className="flex flex-col gap-1">
 
+      <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
+          STATUS: {upperMessage}
+        </div>
+
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           GLOBAL RANK: {user.ranking}
         </div>
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           CONTRIBUTION POINTS: {user.contributionPoints}
         </div>
-        <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
-          ACCEPTANCE RATE: {user.acceptanceRate}%
-        </div>
+      
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           REPUTATION: {user.reputation}
         </div>
@@ -115,6 +123,9 @@ const Statistics = () => {
   <div className="rightup flex ml-4 mt-0 mb-10">
    <div  className=" flex flex-col gap-1 ">
 
+   <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
+          ACCEPTANCE RATE: {user.acceptanceRate}%
+        </div>
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           LAST ACTIVE: {lastDate.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
         </div>
@@ -124,9 +135,7 @@ const Statistics = () => {
         <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
           TOTAL ACTIVE DAYS: {totalActiveDays}
         </div>
-        <div className="bg-white p-6 bg-opacity-20 font-orbitron m-2 text-left w-80 transition duration-300 hover:bg-gradient-to-r from-gray-900 to-blue-900">
-          TOTAL ACTIVE DAYS: {totalActiveDays}
-        </div>
+        
      </div>
 
       <div>
