@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import UserContext from './context/UserContext';
 import ClipLoader from "react-spinners/ClipLoader";
+import MobileWarning2 from './MobileWarning2';
 
 const App = () => {
   const { setUser } = useContext(UserContext);
@@ -34,6 +35,7 @@ const App = () => {
 
   return (
     <div className="App">
+       <MobileWarning2/>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-900 via-slate-700 to-slate-900">
         <h1 className="text-5xl font-bold mb-6 text-slate-450 bg-gradient-to-bl from-zinc-200 to-sky-50 bg-clip-text text-transparent font-orbitron">
           LEETCODE DASHBOARD
