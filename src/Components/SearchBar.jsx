@@ -4,11 +4,6 @@ import axios from 'axios';
 import { createClient } from '@supabase/supabase-js';
 import { useNavigate } from 'react-router-dom'; 
 
-const supabase = createClient(
-  "https://hclqgypchcpqdvplqvzh.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhjbHFneXBjaGNwcWR2cGxxdnpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNzUxMjIsImV4cCI6MjAzMDc1MTEyMn0.jCKybOwqBOElDsOJypsWxQ2pWuoIp23P5ZbYXp4CWds"
-);
-
 export const SearchBar = () => {
   const { inputValue, setInputValue, setUser } = useContext(UserContext);
   const navigate = useNavigate();
