@@ -24,10 +24,6 @@ export const SearchBar = () => {
       const response = await axios.get(`https://leetcode-stats-api.herokuapp.com/${inputValue}`);
       setUser(response.data);
 
-      const { data, error } = await supabase
-        .from('LEET')  // Make sure the table name is correct
-        .insert([{ ID: inputValue }]); // Ensure the column name is correct
-
       if (error) {
         console.error('Error inserting data:', error.message);
         return; // Stop further execution in case of error
